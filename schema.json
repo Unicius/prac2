@@ -1,0 +1,45 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "WellPassportContract",
+    "description": "Контракт данных цифрового паспорта скважины (Вариант А)",
+    "type": "object",
+    "required": ["well_id", "field_name", "depth_m", "q_liq", "w_pct", "is_active", "pump"],
+    "properties": {
+        "well_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Уникальный код скважины"
+        },
+        "field_name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Название месторождения"
+        },
+        "depth_m": {
+            "type": "integer",
+            "minimum": 500,
+            "maximum": 4500
+        },
+        "q_liq": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1000.0
+        },
+        "w_pct": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 100.0
+        },
+        "is_active": {
+            "type": "boolean"
+        },
+        "pump": {
+            "type": "object",
+            "required": ["model", "power_kw"],
+            "properties": {
+                "model": { "type": "string", "minLength": 1 },
+                "power_kw": { "type": "number", "minimum": 10.0, "maximum": 500.0 }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "well_id": "W-121",
+    "field_name": "Приобское",
+    "depth_m": 2550,
+    "q_liq": 118.5,
+    "w_pct": 54.0,
+    "is_active": true,
+    "pump": {
+        "model": "ЭЦН5-80-1800",
+        "power_kw": 45.0
+    }
+}
